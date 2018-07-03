@@ -135,14 +135,14 @@
         },
         "name": {
           "type": "array",
-          "items" : {
-            "type" : "string"
+          "items": {
+            "type": "string"
           }
         },
         "tag": {
           "type": "array",
-          "items" : {
-            "type" : "string"
+          "items": {
+            "type": "string"
           }
         }
       }

@@ -10,10 +10,10 @@ import io.swagger.models.Swagger
 import org.springframework.beans.factory.annotation.Autowired
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "166",
-        severity = Severity.MUST,
-        title = "Avoid Link in Header Rule"
+    ruleSet = ZalandoRuleSet::class,
+    id = "166",
+    severity = Severity.MUST,
+    title = "Avoid Link in Header Rule"
 )
 class AvoidLinkHeadersRule(@Autowired rulesConfig: Config) : HttpHeadersRule(rulesConfig) {
     private val description = "Do Not Use Link Headers with JSON entities"

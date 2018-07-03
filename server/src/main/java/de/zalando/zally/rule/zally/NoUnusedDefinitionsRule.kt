@@ -20,10 +20,10 @@ import io.swagger.models.properties.Property
 import io.swagger.models.properties.RefProperty
 
 @Rule(
-        ruleSet = ZallyRuleSet::class,
-        id = "S005",
-        severity = Severity.SHOULD,
-        title = "Do not leave unused definitions"
+    ruleSet = ZallyRuleSet::class,
+    id = "S005",
+    severity = Severity.SHOULD,
+    title = "Do not leave unused definitions"
 )
 class NoUnusedDefinitionsRule {
 

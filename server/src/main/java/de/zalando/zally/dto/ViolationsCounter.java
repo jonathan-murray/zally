@@ -12,8 +12,8 @@ public class ViolationsCounter {
 
     public ViolationsCounter(List<Result> violations) {
         counters = violations.
-            stream().
-            collect(Collectors.groupingBy(Result::getViolationType, Collectors.summingInt(x -> 1)));
+                stream().
+                collect(Collectors.groupingBy(Result::getViolationType, Collectors.summingInt(x -> 1)));
     }
 
     public Integer getCounter(Severity violationType) {

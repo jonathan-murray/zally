@@ -8,10 +8,10 @@ import de.zalando.zally.util.PatternUtil
 import io.swagger.models.Swagger
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "129",
-        severity = Severity.MUST,
-        title = "Lowercase words with hyphens"
+    ruleSet = ZalandoRuleSet::class,
+    id = "129",
+    severity = Severity.MUST,
+    title = "Lowercase words with hyphens"
 )
 class KebabCaseInPathSegmentsRule {
 

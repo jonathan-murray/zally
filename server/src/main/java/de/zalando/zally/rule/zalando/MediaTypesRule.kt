@@ -9,10 +9,10 @@ import de.zalando.zally.util.PatternUtil.isCustomMediaTypeWithVersioning
 import io.swagger.models.Swagger
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "172",
-        severity = Severity.SHOULD,
-        title = "Prefer standard media type names"
+    ruleSet = ZalandoRuleSet::class,
+    id = "172",
+    severity = Severity.SHOULD,
+    title = "Prefer standard media type names"
 )
 class MediaTypesRule {
 

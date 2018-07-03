@@ -73,8 +73,8 @@ parameters:
     in: query
     type: string
     enum:
-      - ACTIVE
-      - INACTIVE
+    - ACTIVE
+    - INACTIVE
     description: Filter APIs by lifecycle state
     required: false
   CrawledAPIDefinition:

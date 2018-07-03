@@ -1,6 +1,7 @@
 package de.zalando.zally.apireview;
 
 import org.junit.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class OpenApiHelperTest {
@@ -9,8 +10,8 @@ public class OpenApiHelperTest {
     public void shouldParseApiTitle() {
         String title = OpenApiHelper.extractApiName(
                 "openapi: 3.0.1\n" +
-                "info:\n" +
-                "  title: Awesome API");
+                        "info:\n" +
+                        "  title: Awesome API");
 
         assertThat(title).isEqualTo("Awesome API");
     }

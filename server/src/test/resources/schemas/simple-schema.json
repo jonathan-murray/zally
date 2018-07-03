@@ -12,5 +12,8 @@
       "$ref": "http://simple-referenced-schema.json/schema#/properties/age"
     }
   },
-  "required": ["firstName", "lastName"]
+  "required": [
+    "firstName",
+    "lastName"
+  ]
 }

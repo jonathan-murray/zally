@@ -25,19 +25,19 @@ class ObjectTreeReaderTest {
         val node = cut.read(contents)
 
         assertThat(node
-                .path("swagger")
-                .textValue())
-                .hasToString("2.0")
+            .path("swagger")
+            .textValue())
+            .hasToString("2.0")
         assertThat(node
-                .path("info")
-                .path("title")
-                .textValue())
-                .hasToString("Things API")
+            .path("info")
+            .path("title")
+            .textValue())
+            .hasToString("Things API")
         assertThat(node
-                .path("info")
-                .path("version")
-                .textValue())
-                .hasToString("1.0.0")
+            .path("info")
+            .path("version")
+            .textValue())
+            .hasToString("1.0.0")
     }
 
     /** Tests that basic YAML is supported */
@@ -54,19 +54,19 @@ class ObjectTreeReaderTest {
         val node = cut.read(contents)
 
         assertThat(node
-                .path("swagger")
-                .textValue())
-                .hasToString("2.0")
+            .path("swagger")
+            .textValue())
+            .hasToString("2.0")
         assertThat(node
-                .path("info")
-                .path("title")
-                .textValue())
-                .hasToString("Things API")
+            .path("info")
+            .path("title")
+            .textValue())
+            .hasToString("Things API")
         assertThat(node
-                .path("info")
-                .path("version")
-                .textValue())
-                .hasToString("1.0.0")
+            .path("info")
+            .path("version")
+            .textValue())
+            .hasToString("1.0.0")
     }
 
     /** Tests that advanced YAML is supported */
@@ -97,19 +97,19 @@ class ObjectTreeReaderTest {
         val node = cut.read(contents)
 
         assertThat(node
-                .path("ReadThing")
-                .path("properties")
-                .path("id")
-                .path("format")
-                .textValue())
-                .hasToString("uuid")
+            .path("ReadThing")
+            .path("properties")
+            .path("id")
+            .path("format")
+            .textValue())
+            .hasToString("uuid")
 
         assertThat(node
-                .path("ReadThing")
-                .path("properties")
-                .path("name")
-                .path("type")
-                .textValue())
-                .hasToString("string")
+            .path("ReadThing")
+            .path("properties")
+            .path("name")
+            .path("type")
+            .textValue())
+            .hasToString("string")
     }
 }

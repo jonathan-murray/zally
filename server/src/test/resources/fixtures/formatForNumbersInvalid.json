@@ -50,7 +50,7 @@
         ],
         "parameters": [
           {
-            "$ref" : "#/parameters/PetFullPrice"
+            "$ref": "#/parameters/PetFullPrice"
           },
           {
             "name": "pet",
@@ -125,10 +125,10 @@
     }
   },
   "parameters": {
-    "PetFullPrice" : {
-      "name" : "full_price",
-      "description" : "full price of pet",
-      "in" : "header",
+    "PetFullPrice": {
+      "name": "full_price",
+      "description": "full price of pet",
+      "in": "header",
       "type": "number"
     }
   }

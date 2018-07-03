@@ -11,10 +11,10 @@ import io.swagger.models.Swagger
 import org.springframework.beans.factory.annotation.Autowired
 
 @Rule(
-        ruleSet = ZallyRuleSet::class,
-        id = "131",
-        severity = Severity.MUST,
-        title = "Use Hyphenated HTTP Headers"
+    ruleSet = ZallyRuleSet::class,
+    id = "131",
+    severity = Severity.MUST,
+    title = "Use Hyphenated HTTP Headers"
 )
 class HyphenateHttpHeadersRule(@Autowired rulesConfig: Config) : HttpHeadersRule(rulesConfig) {
 

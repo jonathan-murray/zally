@@ -21,7 +21,8 @@
     "application/json"
   ],
   "produces": [
-    "application/json", "application/pdf"
+    "application/json",
+    "application/pdf"
   ],
   "paths": {
     "/binary": {
@@ -33,8 +34,8 @@
         "responses": {
           "200": {
             "description": "A raw binary of a PDF file",
-            "schema" : {
-              "type" : "file"
+            "schema": {
+              "type": "file"
             }
           }
         }

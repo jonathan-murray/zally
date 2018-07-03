@@ -46,10 +46,10 @@ class LimitNumberOfResourcesRuleTest {
 
         val resourceTypes = rule.resourceTypes(paths)
         assertThat(resourceTypes).hasSameElementsAs(listOf(
-                "/",
-                "/customers",
-                "/addresses",
-                "/customers/{id}/addresses"))
+            "/",
+            "/customers",
+            "/addresses",
+            "/customers/{id}/addresses"))
     }
 
     @Test

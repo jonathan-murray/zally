@@ -12,16 +12,16 @@ import io.swagger.models.parameters.Parameter
 import org.springframework.beans.factory.annotation.Autowired
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "171",
-        severity = Severity.MUST,
-        title = "Define Format for Type Number and Integer"
+    ruleSet = ZalandoRuleSet::class,
+    id = "171",
+    severity = Severity.MUST,
+    title = "Define Format for Type Number and Integer"
 )
 class FormatForNumbersRule(@Autowired rulesConfig: Config) {
     private val description = """Numeric properties must have valid format specified: """
 
     private val type2format = rulesConfig.getConfig("${javaClass.simpleName}.formats").entrySet()
-            .map { (key, config) -> key to config.unwrapped() as List<String> }.toMap()
+        .map { (key, config) -> key to config.unwrapped() as List<String> }.toMap()
 
     @Check(severity = Severity.MUST)
     fun validate(swagger: Swagger): Violation? {
@@ -47,7 +47,7 @@ class FormatForNumbersRule(@Autowired rulesConfig: Config) {
     }
 
     private fun Parameter.hasValidFormat(): Boolean =
-            this !is AbstractSerializableParameter<*> || isValid(getType(), getFormat())
+        this !is AbstractSerializableParameter<*> || isValid(getType(), getFormat())
 
     private fun isValid(type: String?, format: String?): Boolean = type2format[type]?.let { format in it } ?: true
 }

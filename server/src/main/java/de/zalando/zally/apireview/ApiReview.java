@@ -51,7 +51,7 @@ public class ApiReview implements Serializable {
 
     @Column(nullable = false)
     @Type(type = "org.jadira.usertype.dateandtime.threeten.PersistentOffsetDateTime",
-        parameters = {@Parameter(name = "javaZone", value = "UTC")})
+            parameters = {@Parameter(name = "javaZone", value = "UTC")})
     private OffsetDateTime created;
 
     private int numberOfEndpoints;
@@ -84,12 +84,12 @@ public class ApiReview implements Serializable {
         this.name = OpenApiHelper.extractApiName(apiDefinition);
         this.apiId = OpenApiHelper.extractApiId(apiDefinition);
         this.ruleViolations = violations.stream()
-            .map(v -> new RuleViolation(
-                this,
-                String.format("%s (%s)", v.getRule().title(), v.getRule().id()),
-                v.getViolationType(),
-                v.getPaths().size()))
-            .collect(Collectors.toList());
+                .map(v -> new RuleViolation(
+                        this,
+                        String.format("%s (%s)", v.getRule().title(), v.getRule().id()),
+                        v.getViolationType(),
+                        v.getPaths().size()))
+                .collect(Collectors.toList());
 
         this.numberOfEndpoints = EndpointCounter.count(apiDefinition);
         this.mustViolations = (int) ruleViolations.stream().filter(r -> r.getType() == Severity.MUST).count();
@@ -225,24 +225,24 @@ public class ApiReview implements Serializable {
 
         ApiReview that = (ApiReview) o;
         return Objects.equals(id, that.id)
-            && Objects.equals(name, that.name)
-            && Objects.equals(jsonPayload, that.jsonPayload)
-            && Objects.equals(apiDefinition, that.apiDefinition)
-            && Objects.equals(successfulProcessed, that.successfulProcessed)
-            && Objects.equals(day, that.day)
-            && Objects.equals(created, that.created)
-            && Objects.equals(numberOfEndpoints, that.numberOfEndpoints)
-            && Objects.equals(mustViolations, that.mustViolations)
-            && Objects.equals(shouldViolations, that.shouldViolations)
-            && Objects.equals(mayViolations, that.mayViolations)
-            && Objects.equals(hintViolations, that.hintViolations)
-            && Objects.equals(ruleViolations, that.ruleViolations);
+                && Objects.equals(name, that.name)
+                && Objects.equals(jsonPayload, that.jsonPayload)
+                && Objects.equals(apiDefinition, that.apiDefinition)
+                && Objects.equals(successfulProcessed, that.successfulProcessed)
+                && Objects.equals(day, that.day)
+                && Objects.equals(created, that.created)
+                && Objects.equals(numberOfEndpoints, that.numberOfEndpoints)
+                && Objects.equals(mustViolations, that.mustViolations)
+                && Objects.equals(shouldViolations, that.shouldViolations)
+                && Objects.equals(mayViolations, that.mayViolations)
+                && Objects.equals(hintViolations, that.hintViolations)
+                && Objects.equals(ruleViolations, that.ruleViolations);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id, name, jsonPayload, apiDefinition, successfulProcessed,
-            day, created, numberOfEndpoints, mustViolations, shouldViolations, mayViolations,
-            hintViolations, ruleViolations);
+                day, created, numberOfEndpoints, mustViolations, shouldViolations, mayViolations,
+                hintViolations, ruleViolations);
     }
 }

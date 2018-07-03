@@ -6,7 +6,7 @@ info:
 host: problemjson.example.com
 
 produces:
-  - application/json
+- application/json
 paths:
   /products:
     head:
@@ -29,20 +29,20 @@ paths:
         and other details about each product, and lists the products in the
         proper display order.
       parameters:
-        - name: latitude
-          in: query
-          description: Latitude component of location.
-          required: true
-          type: number
-          format: double
-        - name: longitude
-          in: query
-          description: Longitude component of location.
-          required: true
-          type: number
-          format: double
+      - name: latitude
+        in: query
+        description: Latitude component of location.
+        required: true
+        type: number
+        format: double
+      - name: longitude
+        in: query
+        description: Longitude component of location.
+        required: true
+        type: number
+        format: double
       tags:
-        - Products
+      - Products
       responses:
         200:
           description: An array of products
@@ -133,11 +133,11 @@ definitions:
 
   ComposedProblem:
     allOf:
-      - $ref: 'https://zalando.github.io/problem/schema.yaml#/Problem'
-      - properties:
-          extended_description:
-            type: string
-            description: Extended description
+    - $ref: 'https://zalando.github.io/problem/schema.yaml#/Problem'
+    - properties:
+        extended_description:
+          type: string
+          description: Extended description
 
   CopiedProblem:
     type: object

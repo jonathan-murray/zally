@@ -48,8 +48,9 @@ class UseProblemJsonRule {
                         context.violation(description, schema)
                             .let {
                                 Violation(
-                                        "${it.description} ${validation.description}",
-                                        it.pointer?.append(validation.pointer ?: JsonPointers.empty()) ?: JsonPointers.empty()
+                                    "${it.description} ${validation.description}",
+                                    it.pointer?.append(validation.pointer ?: JsonPointers.empty())
+                                        ?: JsonPointers.empty()
                                 )
                             }
                     }

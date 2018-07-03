@@ -68,8 +68,8 @@
         {
           "name": "Authorization",
           "in": "Header",
-          "type" : "string",
-          "description" : "Bearer authorization token",
+          "type": "string",
+          "description": "Bearer authorization token",
           "required": true
         }
       ],

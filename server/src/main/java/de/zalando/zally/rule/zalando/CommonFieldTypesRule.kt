@@ -11,10 +11,10 @@ import io.swagger.models.properties.Property
 import org.springframework.beans.factory.annotation.Autowired
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "174",
-        severity = Severity.MUST,
-        title = "Use common field names"
+    ruleSet = ZalandoRuleSet::class,
+    id = "174",
+    severity = Severity.MUST,
+    title = "Use common field names"
 )
 class CommonFieldTypesRule(@Autowired rulesConfig: Config) {
 

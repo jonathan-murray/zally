@@ -15,16 +15,16 @@ class SecureWithOAuth2RuleTest {
     private val rule = SecureWithOAuth2Rule()
 
     private val checkSecurityDefinitionsExpectedOauthViolation = Violation(
-            "No OAuth2 security definitions found",
-            emptyList())
+        "No OAuth2 security definitions found",
+        emptyList())
 
     private val checkSecurityDefinitionsExpectedHttpsViolation = Violation(
-            "OAuth2 should be only used together with https",
-            emptyList())
+        "OAuth2 should be only used together with https",
+        emptyList())
 
     private val checkPasswordFlowExpectedViolation = Violation(
-            "OAuth2 security definitions should use application flow",
-            emptyList())
+        "OAuth2 security definitions should use application flow",
+        emptyList())
 
     @Test
     fun checkSecurityDefinitionsWithEmptyReturnsViolation() {

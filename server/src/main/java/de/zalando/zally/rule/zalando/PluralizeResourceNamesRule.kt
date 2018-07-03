@@ -11,10 +11,10 @@ import io.swagger.models.Swagger
 import org.springframework.beans.factory.annotation.Autowired
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "134",
-        severity = Severity.MUST,
-        title = "Pluralize Resource Names"
+    ruleSet = ZalandoRuleSet::class,
+    id = "134",
+    severity = Severity.MUST,
+    title = "Pluralize Resource Names"
 )
 class PluralizeResourceNamesRule(@Autowired rulesConfig: Config) {
     private val description = "Resource '%s' appears to be singular (but we are not sure)"

@@ -33,10 +33,10 @@
         "responses": {
           "200": {
             "description": "A list of pets.",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Pet"
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Pet"
               }
             }
           }

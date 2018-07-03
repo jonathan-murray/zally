@@ -9,10 +9,10 @@ import io.swagger.models.parameters.Parameter
 import io.swagger.models.parameters.QueryParameter
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "154",
-        severity = Severity.SHOULD,
-        title = "Explicitly define the Collection Format of Query Parameters"
+    ruleSet = ZalandoRuleSet::class,
+    id = "154",
+    severity = Severity.SHOULD,
+    title = "Explicitly define the Collection Format of Query Parameters"
 )
 class QueryParameterCollectionFormatRule {
     private val formatsAllowed = listOf("csv", "multi")

@@ -29,23 +29,23 @@ public class ApiDefinitionReader {
 
     // a whitelist of mime-types to accept when expecting JSON or YAML
     private static final List<MediaType> MEDIA_TYPE_WHITELIST = parseMediaTypes(asList(
-        // standard YAML mime-type plus variants
-        "application/yaml",
-        "application/x-yaml",
-        "application/vnd.yaml",
-        "text/yaml",
-        "text/x-yaml",
-        "text/vnd.yaml",
+            // standard YAML mime-type plus variants
+            "application/yaml",
+            "application/x-yaml",
+            "application/vnd.yaml",
+            "text/yaml",
+            "text/x-yaml",
+            "text/vnd.yaml",
 
-        // standard JSON mime-type plus variants
-        "application/json",
-        "application/javascript",
-        "text/javascript",
-        "text/x-javascript",
-        "text/x-json",
+            // standard JSON mime-type plus variants
+            "application/json",
+            "application/javascript",
+            "text/javascript",
+            "text/x-javascript",
+            "text/x-json",
 
-        // github.com raw content pages issue text/plain content type for YAML
-        "text/plain"
+            // github.com raw content pages issue text/plain content type for YAML
+            "text/plain"
     ));
 
     private final RestTemplate client;
@@ -89,7 +89,7 @@ public class ApiDefinitionReader {
 
     private String removeSpecialCharactersSuffix(String url) {
         return url.endsWith(SPECIAL_CHARACTERS_SUFFIX)
-            ? url.substring(0, url.length() - SPECIAL_CHARACTERS_SUFFIX.length())
-            : url;
+                ? url.substring(0, url.length() - SPECIAL_CHARACTERS_SUFFIX.length())
+                : url;
     }
 }

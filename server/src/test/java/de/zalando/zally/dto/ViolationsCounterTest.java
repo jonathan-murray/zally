@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ViolationsCounterTest {
     private static void assertCounters(Map<Severity, Integer> expectedCounters, List<Result> violations)
-        throws AssertionError {
+            throws AssertionError {
 
         final ViolationsCounter counter = new ViolationsCounter(violations);
         for (Severity violationType : expectedCounters.keySet()) {
@@ -42,7 +42,7 @@ public class ViolationsCounterTest {
     public void countsMustViolations() {
         final List<Result> violations = new ArrayList<>();
         IntStream.range(0, 5).forEach(
-            (i) -> violations.add(generateViolation(Severity.MUST))
+                (i) -> violations.add(generateViolation(Severity.MUST))
         );
         final Map<Severity, Integer> expectedCounters = new HashMap<>();
         expectedCounters.put(Severity.MUST, 5);
@@ -57,7 +57,7 @@ public class ViolationsCounterTest {
     public void countsShouldViolations() {
         final List<Result> violations = new ArrayList<>();
         IntStream.range(0, 5).forEach(
-            (i) -> violations.add(generateViolation(Severity.SHOULD))
+                (i) -> violations.add(generateViolation(Severity.SHOULD))
         );
         final Map<Severity, Integer> expectedCounters = new HashMap<>();
         expectedCounters.put(Severity.MUST, 0);
@@ -71,7 +71,7 @@ public class ViolationsCounterTest {
     public void countsMayViolations() {
         final List<Result> violations = new ArrayList<>();
         IntStream.range(0, 5).forEach(
-            (i) -> violations.add(generateViolation(Severity.MAY))
+                (i) -> violations.add(generateViolation(Severity.MAY))
         );
         final Map<Severity, Integer> expectedCounters = new HashMap<>();
         expectedCounters.put(Severity.MUST, 0);
@@ -86,7 +86,7 @@ public class ViolationsCounterTest {
     public void countsHintViolations() {
         final List<Result> violations = new ArrayList<>();
         IntStream.range(0, 5).forEach(
-            (i) -> violations.add(generateViolation(Severity.HINT))
+                (i) -> violations.add(generateViolation(Severity.HINT))
         );
         final Map<Severity, Integer> expectedCounters = new HashMap<>();
         expectedCounters.put(Severity.MUST, 0);

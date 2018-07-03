@@ -8,10 +8,10 @@ import de.zalando.zally.util.PatternUtil.isVersion
 import io.swagger.models.Swagger
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "116",
-        severity = Severity.SHOULD,
-        title = "Provide version information"
+    ruleSet = ZalandoRuleSet::class,
+    id = "116",
+    severity = Severity.SHOULD,
+    title = "Provide version information"
 )
 class VersionInInfoSectionRule {
     private val description = "Only the documentation, not the API itself, needs version information. It should be in the " +

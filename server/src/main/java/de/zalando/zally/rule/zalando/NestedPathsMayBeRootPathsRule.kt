@@ -8,10 +8,10 @@ import de.zalando.zally.util.PatternUtil.isPathVariable
 import io.swagger.models.Swagger
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "145",
-        severity = Severity.MAY,
-        title = "Consider Using (Non-) Nested URLs"
+    ruleSet = ZalandoRuleSet::class,
+    id = "145",
+    severity = Severity.MAY,
+    title = "Consider Using (Non-) Nested URLs"
 )
 class NestedPathsMayBeRootPathsRule {
     private val description = "Nested paths / URLs may be top-level resource"

@@ -22,10 +22,10 @@ import io.swagger.models.properties.Property
 import io.swagger.models.properties.StringProperty
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "107",
-        severity = Severity.SHOULD,
-        title = "Prefer Compatible Extensions"
+    ruleSet = ZalandoRuleSet::class,
+    id = "107",
+    severity = Severity.SHOULD,
+    title = "Prefer Compatible Extensions"
 )
 class ExtensibleEnumRule {
 
@@ -37,7 +37,7 @@ class ExtensibleEnumRule {
         val enumNames = (properties.keys + parameters.keys).distinct()
         val enumPaths = (properties.values + parameters.values).distinct()
         return if (enumNames.isNotEmpty()) Violation(
-                "Properties/Parameters $enumNames are not extensible enums", enumPaths)
+            "Properties/Parameters $enumNames are not extensible enums", enumPaths)
         else null
     }
 

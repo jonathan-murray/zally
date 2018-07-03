@@ -34,12 +34,12 @@ public class RestSupportedRulesTest extends RestApiBaseTest {
     @Test
     public void testRulesOrdered() {
         final List<RuleDTO> rules = getSupportedRules();
-        for(int i=1;i<rules.size();++i) {
+        for (int i = 1; i < rules.size(); ++i) {
             final Severity prev = rules.get(i - 1).getType();
             final Severity next = rules.get(i).getType();
             assertTrue("Item #" + i + " is out of order:\n" +
-                    rules.stream().map(Object::toString).collect(joining("\n")),
-                    prev.compareTo(next)<=0);
+                            rules.stream().map(Object::toString).collect(joining("\n")),
+                    prev.compareTo(next) <= 0);
         }
     }
 

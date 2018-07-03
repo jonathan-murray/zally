@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component
 class ContextRulesValidator(@Autowired rules: RulesManager) : RulesValidator<Context>(rules) {
 
     override fun parse(content: String): Context? =
-            Context.createOpenApiContext(content) ?: Context.createSwaggerContext(content)
+        Context.createOpenApiContext(content) ?: Context.createSwaggerContext(content)
 
     override fun ignore(root: Context, pointer: JsonPointer, ruleId: String) = root.isIgnored(pointer, ruleId)
 }

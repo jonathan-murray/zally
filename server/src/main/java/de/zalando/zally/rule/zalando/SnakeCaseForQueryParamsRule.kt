@@ -12,10 +12,10 @@ import io.swagger.models.parameters.QueryParameter
  * Lint for snake case for query params
  */
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "130",
-        severity = Severity.MUST,
-        title = "Use snake_case (never camelCase) for Query Parameters"
+    ruleSet = ZalandoRuleSet::class,
+    id = "130",
+    severity = Severity.MUST,
+    title = "Use snake_case (never camelCase) for Query Parameters"
 )
 class SnakeCaseForQueryParamsRule {
 

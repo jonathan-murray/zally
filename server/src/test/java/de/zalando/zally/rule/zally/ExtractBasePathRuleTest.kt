@@ -38,7 +38,7 @@ class ExtractBasePathRuleTest {
         )
         val rule = rule
         val expected = Violation(DESC_PATTERN.format("/shipment"),
-                emptyList())
+            emptyList())
         assertThat(rule.validate(swagger)).isEqualTo(expected)
     }
 
@@ -52,7 +52,7 @@ class ExtractBasePathRuleTest {
         )
         val rule = rule
         val expected = Violation(DESC_PATTERN.format("/queue/models"),
-                emptyList())
+            emptyList())
         assertThat(rule.validate(swagger)).isEqualTo(expected)
     }
 

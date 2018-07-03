@@ -7,25 +7,25 @@ info:
 host: petstore.swagger.io
 basePath: /v1
 schemes:
-  - http
+- http
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
   /pets:
     get:
       summary: List all pets
       operationId: listPets
       tags:
-        - pets
+      - pets
       parameters:
-        - name: limit
-          in: query
-          description: How many items to return at one time (max 100)
-          required: false
-          type: integer
-          format: int32
+      - name: limit
+        in: query
+        description: How many items to return at one time (max 100)
+        required: false
+        type: integer
+        format: int32
       responses:
         "200":
           description: An paged array of pets
@@ -48,7 +48,7 @@ paths:
           description: asas
           schema:
             $ref: '#/definitions/Names'
-            
+
         default:
           description: unexpected error
           schema:
@@ -59,9 +59,9 @@ paths:
       summary: Create a pet
       operationId: createPets
       parameters:
-        - $ref: '#/parameters/NameParam'
+      - $ref: '#/parameters/NameParam'
       tags:
-        - pets
+      - pets
       responses:
         "201":
           description: Null response
@@ -75,15 +75,15 @@ paths:
       summary: Info for a specific pet
       operationId: showPetById
       tags:
-        - pets
+      - pets
       parameters:
-        - name: petId
-          in: path
-          required: true
-          description: The id of the pet to retrieve
-          type: string
-          
-        - $ref: '#/parameters/NoLimit'
+      - name: petId
+        in: path
+        required: true
+        description: The id of the pet to retrieve
+        type: string
+
+      - $ref: '#/parameters/NoLimit'
 
       responses:
         200:
@@ -91,17 +91,17 @@ paths:
           schema:
             type: object
             required:
-              - color
+            - color
             properties:
               color:
-                  type: string
+                type: string
               size:
-                  type: object
-                  properties:
-                    size_grid:
-                      type: string
-                    size_value:
-                      type: integer
+                type: object
+                properties:
+                  size_grid:
+                    type: string
+                  size_value:
+                    type: integer
               pet:
                 $ref: '#/definitions/Pet'
               names:
@@ -109,14 +109,14 @@ paths:
                 items:
                   $ref: '#/definitions/PetName'
               owners:
-                  type: array
-                  items:
-                    type: object
-                    required:
-                      - some_field
-                    properties:
-                      some_field:
-                        type: integer
+                type: array
+                items:
+                  type: object
+                  required:
+                  - some_field
+                  properties:
+                    some_field:
+                      type: integer
 
         default:
           description: unexpected error
@@ -156,8 +156,8 @@ parameters:
 definitions:
   Pet:
     required:
-      - id
-      - name
+    - id
+    - name
     properties:
       id:
         type: integer
@@ -182,17 +182,17 @@ definitions:
 
   PetName:
     required:
-      - first_name
+    - first_name
     properties:
       first_name:
-          type: string
+        type: string
       last_name:
-          type: object
-          properties:
-            first_part:
-              type: string
-            second_part:
-              type: string
+        type: object
+        properties:
+          first_part:
+            type: string
+          second_part:
+            type: string
       middle_name:
         type: array
         items:
@@ -212,8 +212,8 @@ definitions:
 
   Error:
     required:
-      - code
-      - message
+    - code
+    - message
     properties:
       code:
         type: integer

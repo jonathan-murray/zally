@@ -11,11 +11,11 @@ info:
 host: psa.artmc.zalan.do
 basePath: /
 schemes:
-  - https
+- https
 produces:
-  - application/json
+- application/json
 consumes:
-  - application/json
+- application/json
 parameters:
   Authorization:
     name: Authorization
@@ -36,9 +36,9 @@ paths:
     get:
       summary: returns information about all partners
       tags:
-        - partner
+      - partner
       parameters:
-        - $ref: "#/parameters/Authorization"
+      - $ref: "#/parameters/Authorization"
       responses:
         200:
           description: Success
@@ -51,18 +51,18 @@ paths:
     put:
       summary: Create or update new Partner
       tags:
-        - partner
+      - partner
       description: |
         Successful requests will create or update a Partner on Zalando platform
       parameters:
-        - $ref: "#/parameters/Authorization"
-        - $ref: "#/parameters/partner-id"
-        - name: partner
-          in: body
-          description: Partner Resource Object
-          required: true
-          schema:
-            $ref: "#/definitions/Partner"
+      - $ref: "#/parameters/Authorization"
+      - $ref: "#/parameters/partner-id"
+      - name: partner
+        in: body
+        description: Partner Resource Object
+        required: true
+        schema:
+          $ref: "#/definitions/Partner"
       responses:
         204:
           description: Success - Partner is created.
@@ -72,10 +72,10 @@ paths:
     get:
       summary: returns Partner with provided partner-id
       tags:
-        - partner
+      - partner
       parameters:
-        - $ref: "#/parameters/Authorization"
-        - $ref: "#/parameters/partner-id"
+      - $ref: "#/parameters/Authorization"
+      - $ref: "#/parameters/partner-id"
       responses:
         200:
           description: Success
@@ -87,10 +87,10 @@ paths:
     delete:
       summary: delete Partner with provided partner-id
       tags:
-        - partner
+      - partner
       parameters:
-        - $ref: "#/parameters/Authorization"
-        - $ref: "#/parameters/partner-id"
+      - $ref: "#/parameters/Authorization"
+      - $ref: "#/parameters/partner-id"
       responses:
         204:
           description: Success - Partner is deleted
@@ -101,25 +101,25 @@ paths:
     get:
       summary: List job reports
       tags:
-        - report
+      - report
       parameters:
-        - $ref: "#/parameters/Authorization"
-        - name: from
-          in: query
-          description: only list jobs started after this date-time (RFC-3339)
-          type: string
-          format: date-time
-          required: true
-        - name: to
-          in: query
-          description: only list jobs started before this date-time (RFC-3339)
-          required: true
-          type: string
-          format: date-time
-        - name: partner_id
-          in: query
-          type: string
-          description: only list jobs of this partner
+      - $ref: "#/parameters/Authorization"
+      - name: from
+        in: query
+        description: only list jobs started after this date-time (RFC-3339)
+        type: string
+        format: date-time
+        required: true
+      - name: to
+        in: query
+        description: only list jobs started before this date-time (RFC-3339)
+        required: true
+        type: string
+        format: date-time
+      - name: partner_id
+        in: query
+        type: string
+        description: only list jobs of this partner
       responses:
         200:
           description: list of references to specific job
@@ -132,14 +132,14 @@ paths:
     get:
       summary: Job details
       tags:
-        - report
+      - report
       parameters:
-        - $ref: "#/parameters/Authorization"
-        - name: job-id
-          in: path
-          description: uniquely identifies job within this API
-          type: string
-          required: true
+      - $ref: "#/parameters/Authorization"
+      - name: job-id
+        in: path
+        description: uniquely identifies job within this API
+        type: string
+        required: true
       responses:
         200:
           description: Job Details
@@ -155,21 +155,21 @@ definitions:
     description: |
       Represents a Partner job configuration that will run periodically by Partner Server Adapter
     required:
-      - name
-      - catalogUrl
-      - catalogUsername
-      - catalogPassword
-      - stockUrl
-      - stockUsername
-      - stockPassword
-      - articleServiceUsername
-      - articleServicePassword
-      - channelId
-      - asrFtpUrl
-      - asrFtpPath
-      - asrFtpUsername
-      - asrFtpPassword
-      - active
+    - name
+    - catalogUrl
+    - catalogUsername
+    - catalogPassword
+    - stockUrl
+    - stockUsername
+    - stockPassword
+    - articleServiceUsername
+    - articleServicePassword
+    - channelId
+    - asrFtpUrl
+    - asrFtpPath
+    - asrFtpUsername
+    - asrFtpPassword
+    - active
     properties:
       id:
         type: string
@@ -242,10 +242,10 @@ definitions:
   JobSummary:
     type: object
     required:
-      - start
-      - end
-      - partner_id
-      - details_url
+    - start
+    - end
+    - partner_id
+    - details_url
     properties:
       start:
         type: string
@@ -261,14 +261,14 @@ definitions:
   JobDetails:
     type: object
     required:
-      - start
-      - end
-      - partner_id
-      - feed_type
-      - total_count
-      - success_count
-      - failure_count
-      - failures
+    - start
+    - end
+    - partner_id
+    - feed_type
+    - total_count
+    - success_count
+    - failure_count
+    - failures
     properties:
       start:
         type: string

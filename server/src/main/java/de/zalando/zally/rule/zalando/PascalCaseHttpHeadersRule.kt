@@ -11,10 +11,10 @@ import io.swagger.models.Swagger
 import org.springframework.beans.factory.annotation.Autowired
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "132",
-        severity = Severity.SHOULD,
-        title = "Prefer Hyphenated-Pascal-Case for HTTP header fields"
+    ruleSet = ZalandoRuleSet::class,
+    id = "132",
+    severity = Severity.SHOULD,
+    title = "Prefer Hyphenated-Pascal-Case for HTTP header fields"
 )
 class PascalCaseHttpHeadersRule(@Autowired rulesConfig: Config) : HttpHeadersRule(rulesConfig) {
 

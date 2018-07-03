@@ -91,20 +91,20 @@ public class ApiViolationsController {
 
     private ViolationDTO toDto(Result violation) {
         return new ViolationDTO(
-            violation.getRule().title(),
-            violation.getDescription(),
-            violation.getViolationType(),
-            violation.getRuleSet().url(violation.getRule()).toString(),
-            violation.getPaths(),
-            violation.getPointer() == null ? null : violation.getPointer().toString()
+                violation.getRule().title(),
+                violation.getDescription(),
+                violation.getViolationType(),
+                violation.getRuleSet().url(violation.getRule()).toString(),
+                violation.getPaths(),
+                violation.getPointer() == null ? null : violation.getPointer().toString()
         );
     }
 
     private Map<String, Integer> buildViolationsCount(List<Result> violations) {
         ViolationsCounter counter = new ViolationsCounter(violations);
         return Arrays.stream(Severity.values()).collect(toMap(
-            violationType -> violationType.toString().toLowerCase(),
-            counter::getCounter
+                violationType -> violationType.toString().toLowerCase(),
+                counter::getCounter
         ));
     }
 }

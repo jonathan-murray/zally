@@ -21,12 +21,12 @@ public final class JsonPointers {
     }
 
     private static final List<Function<String, String>> POINTER_FUNCTIONS = Arrays.asList(
-        createFn(compile("^/servers/.*$"), "/basePath"),
-        createFn(compile("^/components/schemas/(.*)$"), "/definitions/%s"),
-        createFn(compile("^/components/responses/(.*)$"), "/responses/%s"),
-        createFn(compile("^/components/parameters/(.*)$"), "/parameters/%s"),
-        createFn(compile("^/components/securitySchemes/(.*)$"), "/securityDefinitions/%s"),
-        createFn(compile("^/paths/(.+/responses/.+)/content/.+/(schema.*)$"), "/paths/%s/%s")
+            createFn(compile("^/servers/.*$"), "/basePath"),
+            createFn(compile("^/components/schemas/(.*)$"), "/definitions/%s"),
+            createFn(compile("^/components/responses/(.*)$"), "/responses/%s"),
+            createFn(compile("^/components/parameters/(.*)$"), "/parameters/%s"),
+            createFn(compile("^/components/securitySchemes/(.*)$"), "/securityDefinitions/%s"),
+            createFn(compile("^/paths/(.+/responses/.+)/content/.+/(schema.*)$"), "/paths/%s/%s")
     );
 
     private static Function<String, String> createFn(Pattern pattern, String pointerOut) {
@@ -77,8 +77,8 @@ public final class JsonPointers {
     protected static JsonPointer escape(final String unescaped) {
         // https://tools.ietf.org/html/rfc6901
         final String escaped = "/" + unescaped
-            .replace("~", "~0")
-            .replace("/", "~1");
+                .replace("~", "~0")
+                .replace("/", "~1");
         return JsonPointer.compile(escaped);
     }
 

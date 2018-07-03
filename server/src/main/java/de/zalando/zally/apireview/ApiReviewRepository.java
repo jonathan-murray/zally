@@ -17,13 +17,13 @@ public interface ApiReviewRepository extends CrudRepository<ApiReview, Long> {
         final LocalDate today = Instant.now().atOffset(ZoneOffset.UTC).toLocalDate();
 
         return userAgent == null || userAgent.isEmpty()
-            ? findByDayBetween(today.minusDays(7L), today)
-            : findByUserAgentAndDayBetween(userAgent, today.minusDays(7L), today);
+                ? findByDayBetween(today.minusDays(7L), today)
+                : findByUserAgentAndDayBetween(userAgent, today.minusDays(7L), today);
     }
 
     default Collection<ApiReview> findByDayBetween(String userAgent, LocalDate from, LocalDate to) {
         return userAgent == null || userAgent.isEmpty()
-            ? findByDayBetween(from, to)
-            : findByUserAgentAndDayBetween(userAgent, from, to);
+                ? findByDayBetween(from, to)
+                : findByUserAgentAndDayBetween(userAgent, from, to);
     }
 }

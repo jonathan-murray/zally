@@ -39,19 +39,19 @@ public class SupportedRulesController {
     @ResponseBody
     @GetMapping("/supported-rules")
     public RulesListDTO listSupportedRules(
-        @RequestParam(value = "type", required = false) Severity typeFilter,
-        @RequestParam(value = "is_active", required = false) Boolean isActiveFilter) {
+            @RequestParam(value = "type", required = false) Severity typeFilter,
+            @RequestParam(value = "is_active", required = false) Boolean isActiveFilter) {
 
         List<RuleDTO> filteredRules = rules
-            .getRules()
-            .stream()
-            .filter(details -> filterByIsActive(details, isActiveFilter))
-            .filter(details -> filterByType(details, typeFilter))
-            .map(this::toDto)
-            .sorted(comparing(RuleDTO::getType)
-                .thenComparing(RuleDTO::getCode)
-                .thenComparing(RuleDTO::getTitle))
-            .collect(toList());
+                .getRules()
+                .stream()
+                .filter(details -> filterByIsActive(details, isActiveFilter))
+                .filter(details -> filterByType(details, typeFilter))
+                .map(this::toDto)
+                .sorted(comparing(RuleDTO::getType)
+                        .thenComparing(RuleDTO::getCode)
+                        .thenComparing(RuleDTO::getTitle))
+                .collect(toList());
 
         return new RulesListDTO(filteredRules);
     }

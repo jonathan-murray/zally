@@ -10,10 +10,10 @@ import io.swagger.models.Swagger
 import org.springframework.beans.factory.annotation.Autowired
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "146",
-        severity = Severity.SHOULD,
-        title = "Limit number of resource types"
+    ruleSet = ZalandoRuleSet::class,
+    id = "146",
+    severity = Severity.SHOULD,
+    title = "Limit number of resource types"
 )
 class LimitNumberOfResourcesRule(@Autowired rulesConfig: Config) {
     private val resourceTypesLimit = rulesConfig.getConfig(javaClass.simpleName).getInt("resource_types_limit")
@@ -23,8 +23,8 @@ class LimitNumberOfResourcesRule(@Autowired rulesConfig: Config) {
         val resourceTypes = resourceTypes(swagger.paths.orEmpty().keys)
         return if (resourceTypes.size > resourceTypesLimit) {
             Violation("Identified ${resourceTypes.size} resource resource types, " +
-                    "greater than recommended limit of $resourceTypesLimit",
-                    resourceTypes.toList())
+                "greater than recommended limit of $resourceTypesLimit",
+                resourceTypes.toList())
         } else null
     }
 
@@ -34,8 +34,8 @@ class LimitNumberOfResourcesRule(@Autowired rulesConfig: Config) {
 
     internal fun resourceType(path: String): String {
         val components = path
-                .split(Regex("/+"))
-                .filter(String::isNotEmpty)
+            .split(Regex("/+"))
+            .filter(String::isNotEmpty)
         val size = components.size
 
         return when {

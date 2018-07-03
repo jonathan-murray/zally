@@ -29,7 +29,9 @@ public class RestApiTestConfiguration {
         );
     }
 
-    /** Rule used for testing */
+    /**
+     * Rule used for testing
+     */
     @Rule(
             ruleSet = TestRuleSet.class,
             id = "TestCheckIsOpenApi3",
@@ -47,7 +49,9 @@ public class RestApiTestConfiguration {
         }
     }
 
-    /** Rule used for testing */
+    /**
+     * Rule used for testing
+     */
     @Rule(
             ruleSet = TestRuleSet.class,
             id = "TestCheckAlwaysReport3MustViolations",

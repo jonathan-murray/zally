@@ -45,9 +45,9 @@ class PluralizeResourceNamesRuleTest {
         val swagger = getFixture("api_tinbox.yaml")
         val result = rule.validate(swagger)!!
         assertThat(result.paths).hasSameElementsAs(listOf(
-                // meta is singular!
-                "/meta/article_domains", "/meta/colors", "/meta/commodity_groups", "/meta/size_grids", "/meta/tags",
-                // queue is singular!
-                "/queue/configs/{config-id}", "/queue/models", "/queue/models/{model-id}", "/queue/summaries"))
+            // meta is singular!
+            "/meta/article_domains", "/meta/colors", "/meta/commodity_groups", "/meta/size_grids", "/meta/tags",
+            // queue is singular!
+            "/queue/configs/{config-id}", "/queue/models", "/queue/models/{model-id}", "/queue/summaries"))
     }
 }

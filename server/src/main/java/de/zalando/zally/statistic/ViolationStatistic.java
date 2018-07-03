@@ -9,7 +9,8 @@ public class ViolationStatistic {
     private Severity type;
     private int occurrence;
 
-    ViolationStatistic() {}
+    ViolationStatistic() {
+    }
 
     ViolationStatistic(RuleViolation violation, int occurrence) {
         this.name = violation.getName();

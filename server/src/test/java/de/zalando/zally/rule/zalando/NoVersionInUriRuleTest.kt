@@ -10,8 +10,8 @@ class NoVersionInUriRuleTest {
     private val rule = NoVersionInUriRule()
 
     val expectedViolation = Violation(
-            "basePath attribute contains version number",
-            emptyList())
+        "basePath attribute contains version number",
+        emptyList())
 
     @Test
     fun returnsViolationsWhenVersionIsInTheBeginingOfBasePath() {

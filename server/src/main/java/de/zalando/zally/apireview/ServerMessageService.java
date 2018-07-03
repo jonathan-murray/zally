@@ -17,7 +17,7 @@ class ServerMessageService {
     private String releasesPage;
 
     ServerMessageService(@Value("#{'${zally.cli.deprecatedCliAgents}'.split(',')}") List<String> deprecatedCliAgents,
-                         @Value("${zally.cli.releasesPage:}") String releasesPage){
+                         @Value("${zally.cli.releasesPage:}") String releasesPage) {
         this.deprecatedCliAgents = deprecatedCliAgents;
         this.releasesPage = releasesPage;
     }

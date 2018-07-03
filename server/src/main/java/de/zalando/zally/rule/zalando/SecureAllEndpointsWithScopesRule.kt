@@ -12,15 +12,15 @@ import io.swagger.models.auth.OAuth2Definition
 import org.springframework.beans.factory.annotation.Autowired
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "105",
-        severity = Severity.MUST,
-        title = "Secure All Endpoints With Scopes"
+    ruleSet = ZalandoRuleSet::class,
+    id = "105",
+    severity = Severity.MUST,
+    title = "Secure All Endpoints With Scopes"
 )
 class SecureAllEndpointsWithScopesRule(@Autowired rulesConfig: Config) {
 
     private val scopeRegex = Regex(rulesConfig.getString(
-            "${SecureAllEndpointsWithScopesRule::class.java.simpleName}.scope_regex"))
+        "${SecureAllEndpointsWithScopesRule::class.java.simpleName}.scope_regex"))
 
     @Check(severity = Severity.MUST)
     fun checkDefinedScopeFormats(swagger: Swagger): Violation? {

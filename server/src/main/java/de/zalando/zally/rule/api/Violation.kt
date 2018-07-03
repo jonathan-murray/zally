@@ -10,7 +10,9 @@ data class Violation(
 ) {
     @Deprecated("Use JsonPointer constructor instead.")
     constructor(description: String, paths: List<String>) : this(description, paths, null)
+
     @Deprecated("Use JsonPointer constructor instead.")
     constructor(description: String, vararg paths: String) : this(description, asList(*paths))
+
     constructor(description: String, pointer: JsonPointer) : this(description, listOf(pointer.toString()), pointer)
 }

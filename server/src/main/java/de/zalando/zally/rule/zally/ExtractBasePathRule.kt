@@ -7,10 +7,10 @@ import de.zalando.zally.rule.api.Violation
 import io.swagger.models.Swagger
 
 @Rule(
-        ruleSet = ZallyRuleSet::class,
-        id = "H001",
-        severity = Severity.HINT,
-        title = "Base path can be extracted"
+    ruleSet = ZallyRuleSet::class,
+    id = "H001",
+    severity = Severity.HINT,
+    title = "Base path can be extracted"
 )
 class ExtractBasePathRule {
 

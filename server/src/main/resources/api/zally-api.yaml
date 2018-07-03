@@ -1,19 +1,19 @@
 swagger: '2.0'
 
 info:
- title: Zally
- description: Zalando's API Linter
- version: "1.4.0"
- x-api-id: 48aa0090-25ef-11e8-b467-0ed5f89f718b
- x-audience: company-internal
- contact:
-   name: Team API Management
-   email: team-api-management@zalando.de
+  title: Zally
+  description: Zalando's API Linter
+  version: "1.4.0"
+  x-api-id: 48aa0090-25ef-11e8-b467-0ed5f89f718b
+  x-audience: company-internal
+  contact:
+    name: Team API Management
+    email: team-api-management@zalando.de
 
 host: "zally.overarching.zalan.do"
 
 schemes:
-  - https
+- https
 
 basePath: /
 
@@ -47,11 +47,11 @@ parameters:
     required: false
     type: string
     x-extensible-enum:
-      - MUST
-      - SHOULD
-      - COULD
-      - MAY
-      - HINT
+    - MUST
+    - SHOULD
+    - COULD
+    - MAY
+    - HINT
   IsActive:
     name: is_active
     in: query
@@ -97,12 +97,12 @@ paths:
         using Zally without authentication but supply a password
         protected url and still get a `401 Unauthorized` response.
       parameters:
-        - $ref: '#/parameters/Authorization'
-        - $ref: '#/parameters/LintingRequest'
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/LintingRequest'
       consumes:
-        - application/json
+      - application/json
       produces:
-        - application/json
+      - application/json
       responses:
         200:
           description: API swagger is OK
@@ -121,8 +121,8 @@ paths:
           schema:
             $ref: 'https://zalando.github.io/problem/schema.yaml#/Problem'
       security:
-        - oauth2:
-          - uid
+      - oauth2:
+        - uid
 
   '/supported-rules':
     get:
@@ -132,13 +132,13 @@ paths:
         Returns a list of rules which are supported by a current Zally
         installation.
       parameters:
-        - $ref: '#/parameters/Authorization'
-        - $ref: '#/parameters/RulesType'
-        - $ref: '#/parameters/IsActive'
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/RulesType'
+      - $ref: '#/parameters/IsActive'
       consumes:
-        - application/json
+      - application/json
       produces:
-        - application/json
+      - application/json
       responses:
         200:
           description: List of supported rules is successfully returned
@@ -153,42 +153,42 @@ paths:
           schema:
             $ref: 'https://zalando.github.io/problem/schema.yaml#/Problem'
       security:
-        - oauth2:
-          - uid
+      - oauth2:
+        - uid
 
   '/review-statistics':
-      get:
-        summary:
-          Provides query capabilites for automatically computed review statistics.
-        description: |
-          Returns a list of all review statistics for a given interval in time.
-          If none of the query parameters is supplied, a list of all review statistics
-          for the last week is returned.
-        parameters:
-          - $ref: '#/parameters/Authorization'
-          - $ref: '#/parameters/From'
-          - $ref: '#/parameters/To'
-          - $ref: '#/parameters/UserAgent'
-        consumes:
-          - application/json
-        produces:
-          - application/json
-        responses:
-          200:
-            description: List of queried review statistics
-            schema:
-              $ref: '#/definitions/ReviewStatisticsResponse'
-          400:
-            description: One of the query parameters is incorrect
-            schema:
-              $ref: 'https://zalando.github.io/problem/schema.yaml#/Problem'
-          default:
-            description: An array of error objects
-            schema:
-              $ref: 'https://zalando.github.io/problem/schema.yaml#/Problem'
-        security:
-          - oauth2:
-            - uid
+    get:
+      summary:
+        Provides query capabilites for automatically computed review statistics.
+      description: |
+        Returns a list of all review statistics for a given interval in time.
+        If none of the query parameters is supplied, a list of all review statistics
+        for the last week is returned.
+      parameters:
+      - $ref: '#/parameters/Authorization'
+      - $ref: '#/parameters/From'
+      - $ref: '#/parameters/To'
+      - $ref: '#/parameters/UserAgent'
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        200:
+          description: List of queried review statistics
+          schema:
+            $ref: '#/definitions/ReviewStatisticsResponse'
+        400:
+          description: One of the query parameters is incorrect
+          schema:
+            $ref: 'https://zalando.github.io/problem/schema.yaml#/Problem'
+        default:
+          description: An array of error objects
+          schema:
+            $ref: 'https://zalando.github.io/problem/schema.yaml#/Problem'
+      security:
+      - oauth2:
+        - uid
 
 definitions:
   LintingRequest:
@@ -208,7 +208,7 @@ definitions:
     type: object
     description: Linting Response
     required:
-      - violations
+    - violations
     properties:
       violations:
         type: array
@@ -223,7 +223,7 @@ definitions:
     type: object
     description: Supported Rules
     required:
-      - supported_rules
+    - supported_rules
     properties:
       supported_rules:
         type: array
@@ -234,16 +234,16 @@ definitions:
     type: object
     description: Review statistics for a given interval in time
     required:
-      - total_reviews
-      - total_reviews_deduplicated
-      - successful_reviews
-      - number_of_endpoints
-      - must_violations
-      - should_violations
-      - may_violations
-      - hint_violations
-      - violations
-      - reviews
+    - total_reviews
+    - total_reviews_deduplicated
+    - successful_reviews
+    - number_of_endpoints
+    - must_violations
+    - should_violations
+    - may_violations
+    - hint_violations
+    - violations
+    - reviews
     properties:
       total_reviews:
         type: integer
@@ -290,10 +290,10 @@ definitions:
     type: object
     description: One api review
     required:
-      - api
-      - successful
-      - number_of_endpoints
-      - violations
+    - api
+    - successful
+    - number_of_endpoints
+    - violations
     properties:
       api:
         type: string
@@ -320,9 +320,9 @@ definitions:
     type: object
     description: One violation in statistics
     required:
-      - name
-      - type
-      - occurrence
+    - name
+    - type
+    - occurrence
     properties:
       name:
         type: string
@@ -343,9 +343,9 @@ definitions:
     type: object
     description: Violation Object
     required:
-      - title
-      - description
-      - violation_type
+    - title
+    - description
+    - violation_type
     properties:
       title:
         type: string
@@ -371,11 +371,11 @@ definitions:
     type: object
     description: Violation Count
     required:
-      - must
-      - should
-      - may
-      - could
-      - hint
+    - must
+    - should
+    - may
+    - could
+    - hint
     properties:
       must:
         type: integer
@@ -397,11 +397,11 @@ definitions:
     type: object
     description: Rule
     required:
-      - title
-      - code
-      - type
-      - url
-      - is_active
+    - title
+    - code
+    - type
+    - url
+    - is_active
     properties:
       title:
         type: string

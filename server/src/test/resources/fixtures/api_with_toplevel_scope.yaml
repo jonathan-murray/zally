@@ -10,11 +10,11 @@ info:
 host: psa.artmc.zalan.do
 basePath: /
 schemes:
-  - https
+- https
 produces:
-  - application/json
+- application/json
 consumes:
-  - application/json
+- application/json
 securityDefinitions:
   oauth2:
     type: oauth2
@@ -24,8 +24,8 @@ securityDefinitions:
       fulfillment-order.read: Access right needed to read from the fulfillment order service.
       fulfillment-order.write: Access right needed to write to the fulfillment order service.
 security:
-  - oauth2:
-    - fulfillment-order.read
+- oauth2:
+  - fulfillment-order.read
 parameters:
   Authorization:
     name: Authorization
@@ -46,9 +46,9 @@ paths:
     get:
       summary: returns information about all partners
       tags:
-        - partner
+      - partner
       parameters:
-        - $ref: "#/parameters/Authorization"
+      - $ref: "#/parameters/Authorization"
       responses:
         200:
           description: Success
@@ -61,18 +61,18 @@ paths:
     put:
       summary: Create or update new Partner
       tags:
-        - partner
+      - partner
       description: |
         Successful requests will create or update a Partner on Zalando platform
       parameters:
-        - $ref: "#/parameters/Authorization"
-        - $ref: "#/parameters/partner-id"
-        - name: partner
-          in: body
-          description: Partner Resource Object
-          required: true
-          schema:
-            $ref: "#/definitions/Partner"
+      - $ref: "#/parameters/Authorization"
+      - $ref: "#/parameters/partner-id"
+      - name: partner
+        in: body
+        description: Partner Resource Object
+        required: true
+        schema:
+          $ref: "#/definitions/Partner"
       responses:
         204:
           description: Success - Partner is created.
@@ -82,10 +82,10 @@ paths:
     get:
       summary: returns Partner with provided partner-id
       tags:
-        - partner
+      - partner
       parameters:
-        - $ref: "#/parameters/Authorization"
-        - $ref: "#/parameters/partner-id"
+      - $ref: "#/parameters/Authorization"
+      - $ref: "#/parameters/partner-id"
       responses:
         200:
           description: Success
@@ -97,10 +97,10 @@ paths:
     delete:
       summary: delete Partner with provided partner-id
       tags:
-        - partner
+      - partner
       parameters:
-        - $ref: "#/parameters/Authorization"
-        - $ref: "#/parameters/partner-id"
+      - $ref: "#/parameters/Authorization"
+      - $ref: "#/parameters/partner-id"
       responses:
         204:
           description: Success - Partner is deleted

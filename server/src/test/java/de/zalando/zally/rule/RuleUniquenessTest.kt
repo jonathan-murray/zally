@@ -19,20 +19,20 @@ class RuleUniquenessTest {
     @Test
     fun ruleIdsShouldBeUnique() {
         val duplicatedCodes = rules.rules
-                .groupBy { it.rule.id }
-                .filterValues { it.size > 1 }
+            .groupBy { it.rule.id }
+            .filterValues { it.size > 1 }
 
         assertThat(duplicatedCodes)
-                .hasToString("{}")
+            .hasToString("{}")
     }
 
     @Test
     fun ruleTitlesShouldBeUnique() {
         val duplicatedCodes = rules.rules
-                .groupBy { it.rule.title }
-                .filterValues { it.size > 1 }
+            .groupBy { it.rule.title }
+            .filterValues { it.size > 1 }
 
         assertThat(duplicatedCodes)
-                .hasToString("{}")
+            .hasToString("{}")
     }
 }

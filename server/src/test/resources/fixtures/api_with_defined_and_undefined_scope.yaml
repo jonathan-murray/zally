@@ -10,11 +10,11 @@ info:
 host: psa.artmc.zalan.do
 basePath: /
 schemes:
-  - https
+- https
 produces:
-  - application/json
+- application/json
 consumes:
-  - application/json
+- application/json
 securityDefinitions:
   oauth2:
     type: oauth2
@@ -49,9 +49,9 @@ paths:
     get:
       summary: returns information about all partners
       tags:
-        - partner
+      - partner
       parameters:
-        - $ref: "#/parameters/Authorization"
+      - $ref: "#/parameters/Authorization"
       responses:
         200:
           description: Success
@@ -60,43 +60,43 @@ paths:
             items:
               $ref: "#/definitions/Partner"
       security:
-        - oauth2:
-          - fulfillment-undefined-order.read
-          - fulfillment-order.read
+      - oauth2:
+        - fulfillment-undefined-order.read
+        - fulfillment-order.read
 
   /partners/{partner-id}:
     put:
       summary: Create or update new Partner
       tags:
-        - partner
+      - partner
       description: |
         Successful requests will create or update a Partner on Zalando platform
       parameters:
-        - $ref: "#/parameters/Authorization"
-        - $ref: "#/parameters/partner-id"
-        - name: partner
-          in: body
-          description: Partner Resource Object
-          required: true
-          schema:
-            $ref: "#/definitions/Partner"
+      - $ref: "#/parameters/Authorization"
+      - $ref: "#/parameters/partner-id"
+      - name: partner
+        in: body
+        description: Partner Resource Object
+        required: true
+        schema:
+          $ref: "#/definitions/Partner"
       responses:
         204:
           description: Success - Partner is created.
         default:
           description: unexpected error
       security:
-        - oauth2:
-          - fulfillment-order.readwrite
-          - fulfillment-order.read
+      - oauth2:
+        - fulfillment-order.readwrite
+        - fulfillment-order.read
 
     get:
       summary: returns Partner with provided partner-id
       tags:
-        - partner
+      - partner
       parameters:
-        - $ref: "#/parameters/Authorization"
-        - $ref: "#/parameters/partner-id"
+      - $ref: "#/parameters/Authorization"
+      - $ref: "#/parameters/partner-id"
       responses:
         200:
           description: Success
@@ -105,21 +105,21 @@ paths:
         404:
           description: Partner not found
       security:
-        - oauth2:
-          - fulfillment-order.read
+      - oauth2:
+        - fulfillment-order.read
 
     delete:
       summary: delete Partner with provided partner-id
       tags:
-        - partner
+      - partner
       parameters:
-        - $ref: "#/parameters/Authorization"
-        - $ref: "#/parameters/partner-id"
+      - $ref: "#/parameters/Authorization"
+      - $ref: "#/parameters/partner-id"
       responses:
         204:
           description: Success - Partner is deleted
         404:
           description: Partner not found
       security:
-        - custom-oauth2:
-          - custom-order.read
+      - custom-oauth2:
+        - custom-order.read

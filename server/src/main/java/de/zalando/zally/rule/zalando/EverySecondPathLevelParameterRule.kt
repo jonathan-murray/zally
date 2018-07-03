@@ -8,10 +8,10 @@ import de.zalando.zally.util.PatternUtil.isPathVariable
 import io.swagger.models.Swagger
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "143",
-        severity = Severity.MUST,
-        title = "Every Second Path Level To Be Parameter"
+    ruleSet = ZalandoRuleSet::class,
+    id = "143",
+    severity = Severity.MUST,
+    title = "Every Second Path Level To Be Parameter"
 )
 class EverySecondPathLevelParameterRule {
     private val description = "Every second path level must be a path parameter"

@@ -7,10 +7,10 @@ import de.zalando.zally.rule.api.Violation
 import io.swagger.models.Swagger
 
 @Rule(
-        ruleSet = ZallyRuleSet::class,
-        id = "M008",
-        severity = Severity.MUST,
-        title = "Host should not contain protocol"
+    ruleSet = ZallyRuleSet::class,
+    id = "M008",
+    severity = Severity.MUST,
+    title = "Host should not contain protocol"
 )
 class NoProtocolInHostRule {
     private val desc = "Information about protocol should be placed in schema. Current host value '%s' violates this rule"

@@ -10,10 +10,10 @@ import io.swagger.models.Swagger
 import org.springframework.beans.factory.annotation.Autowired
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "147",
-        severity = Severity.SHOULD,
-        title = "Limit number of Sub-resources level"
+    ruleSet = ZalandoRuleSet::class,
+    id = "147",
+    severity = Severity.SHOULD,
+    title = "Limit number of Sub-resources level"
 )
 class LimitNumberOfSubresourcesRule(@Autowired rulesConfig: Config) {
     private val description = "Number of sub-resources should not exceed 3"
@@ -24,7 +24,7 @@ class LimitNumberOfSubresourcesRule(@Autowired rulesConfig: Config) {
 
         val paths = swagger.paths.orEmpty()
 //                .filterValues { ignore.accepts(it.vendorExtensions) } FIXME
-                .keys.filter { path ->
+            .keys.filter { path ->
             path.split("/").filter { it.isNotEmpty() && !PatternUtil.isPathVariable(it) }.size - 1 > subresourcesLimit
         }
         return if (paths.isNotEmpty()) Violation(description, paths) else null

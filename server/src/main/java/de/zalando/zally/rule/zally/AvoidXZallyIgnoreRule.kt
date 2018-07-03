@@ -10,10 +10,10 @@ import de.zalando.zally.rule.api.Violation
  * Rule highlighting that x-zally-ignore should be used sparingly
  */
 @Rule(
-        ruleSet = ZallyRuleSet::class,
-        id = "H002",
-        severity = Severity.HINT,
-        title = "Avoid using x-zally-ignore extension."
+    ruleSet = ZallyRuleSet::class,
+    id = "H002",
+    severity = Severity.HINT,
+    title = "Avoid using x-zally-ignore extension."
 )
 class AvoidXZallyIgnoreRule {
 

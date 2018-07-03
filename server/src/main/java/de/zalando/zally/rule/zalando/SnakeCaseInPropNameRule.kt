@@ -11,10 +11,10 @@ import io.swagger.models.Swagger
 import org.springframework.beans.factory.annotation.Autowired
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "118",
-        severity = Severity.MUST,
-        title = "snake_case property names"
+    ruleSet = ZalandoRuleSet::class,
+    id = "118",
+    severity = Severity.MUST,
+    title = "snake_case property names"
 )
 class SnakeCaseInPropNameRule(@Autowired rulesConfig: Config) {
     private val description = "Property names must be snake_case: "

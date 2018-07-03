@@ -32,7 +32,7 @@
         ],
         "parameters": [
           {
-            "$ref" : "#/parameters/TenantId"
+            "$ref": "#/parameters/TenantId"
           }
         ],
         "responses": {
@@ -64,7 +64,7 @@
             }
           },
           {
-            "$ref" : "#/parameters/FlowId"
+            "$ref": "#/parameters/FlowId"
           }
         ],
         "responses": {
@@ -139,7 +139,7 @@
           "format": "int64"
         },
         "name": {
-          "$ref" : "#/definitions/PetName"
+          "$ref": "#/definitions/PetName"
         },
         "tag": {
           "type": "string"

@@ -11,10 +11,10 @@ import io.swagger.models.Swagger
 import io.swagger.models.auth.OAuth2Definition
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "104",
-        severity = Severity.MUST,
-        title = "Secure Endpoints with OAuth 2.0"
+    ruleSet = ZalandoRuleSet::class,
+    id = "104",
+    severity = Severity.MUST,
+    title = "Secure Endpoints with OAuth 2.0"
 )
 class SecureWithOAuth2Rule {
     private val description = "Every endpoint must be secured by OAuth2 properly"

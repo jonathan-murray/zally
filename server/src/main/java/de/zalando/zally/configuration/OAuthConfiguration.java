@@ -37,25 +37,25 @@ class OAuthConfiguration extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(final HttpSecurity http) throws Exception {
         http
-            .httpBasic().disable()
-            .requestMatchers().antMatchers("/**")
-            .and()
-            .sessionManagement()
-            .sessionCreationPolicy(SessionCreationPolicy.NEVER)
-            .and()
-            .authorizeRequests()
-            .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-            .antMatchers("/health").permitAll()
-            .antMatchers("/metrics",
-                "/api-violations",
-                "/supported-rules",
-                "/review-statistics").access("#oauth2.hasScope('uid')")
-            .antMatchers("**").denyAll();
+                .httpBasic().disable()
+                .requestMatchers().antMatchers("/**")
+                .and()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.NEVER)
+                .and()
+                .authorizeRequests()
+                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                .antMatchers("/health").permitAll()
+                .antMatchers("/metrics",
+                        "/api-violations",
+                        "/supported-rules",
+                        "/review-statistics").access("#oauth2.hasScope('uid')")
+                .antMatchers("**").denyAll();
 
         http
-            .exceptionHandling()
-            .authenticationEntryPoint(problemSupport)
-            .accessDeniedHandler(problemSupport);
+                .exceptionHandling()
+                .authenticationEntryPoint(problemSupport)
+                .accessDeniedHandler(problemSupport);
     }
 
     @Bean

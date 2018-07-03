@@ -8,10 +8,10 @@ import io.swagger.models.Swagger
 import io.swagger.models.properties.Property
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "153",
-        severity = Severity.MUST,
-        title = "Use 429 With Header For Rate Limits"
+    ruleSet = ZalandoRuleSet::class,
+    id = "153",
+    severity = Severity.MUST,
+    title = "Use 429 With Header For Rate Limits"
 )
 class Use429HeaderForRateLimitRule {
 

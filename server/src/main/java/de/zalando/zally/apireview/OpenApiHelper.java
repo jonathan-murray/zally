@@ -7,7 +7,8 @@ public class OpenApiHelper {
 
     private static String API_ID_EXTENSION = "x-api-id";
 
-    private OpenApiHelper() {}
+    private OpenApiHelper() {
+    }
 
     public static String extractApiName(String apiDefinition) {
         try {

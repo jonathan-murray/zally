@@ -9,17 +9,17 @@ import io.swagger.models.Swagger
 import org.springframework.beans.factory.annotation.Autowired
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "151",
-        severity = Severity.HINT,
-        title = "Not Specify Standard Error Codes"
+    ruleSet = ZalandoRuleSet::class,
+    id = "151",
+    severity = Severity.HINT,
+    title = "Not Specify Standard Error Codes"
 )
 class NotSpecifyStandardErrorCodesRule(@Autowired rulesConfig: Config) {
     private val description = "Not Specify Standard Error Status Codes Like 400, 404, 503 " +
-            "Unless They Have Another Meaning Or Special Implementation/Contract Detail"
+        "Unless They Have Another Meaning Or Special Implementation/Contract Detail"
 
     private val standardErrorStatusCodes = rulesConfig.getConfig(javaClass.simpleName)
-            .getIntList("standard_error_codes").toSet()
+        .getIntList("standard_error_codes").toSet()
 
     @Check(severity = Severity.HINT)
     fun validate(swagger: Swagger): Violation? {

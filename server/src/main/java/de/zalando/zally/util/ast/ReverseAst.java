@@ -51,7 +51,7 @@ public class ReverseAst {
         }
         boolean ignored = isIgnored(node.marker, ignoreValue);
         return ignored ||
-            (node.hasChildren() && node.getChildren().parallelStream().allMatch(c -> isIgnored(c.marker, ignoreValue)));
+                (node.hasChildren() && node.getChildren().parallelStream().allMatch(c -> isIgnored(c.marker, ignoreValue)));
     }
 
     private boolean isIgnored(Marker marker, String ignoreValue) {
@@ -71,10 +71,10 @@ public class ReverseAst {
             return markers;
         }
         return node
-            .getChildren()
-            .parallelStream()
-            .flatMap(child -> getIgnoreValues(child.marker).stream())
-            .collect(Collectors.toSet());
+                .getChildren()
+                .parallelStream()
+                .flatMap(child -> getIgnoreValues(child.marker).stream())
+                .collect(Collectors.toSet());
     }
 
     private Collection<String> getIgnoreValues(Marker marker) {

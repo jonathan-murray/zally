@@ -9,8 +9,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class ServerMessageServiceTest {
 
     private final ServerMessageService serverMessageService = new ServerMessageService(
-        Arrays.asList("unirest-java/1.3.11", "Zally-CLI/1.0"),
-        "https://github.com/zalando/zally/releases");
+            Arrays.asList("unirest-java/1.3.11", "Zally-CLI/1.0"),
+            "https://github.com/zalando/zally/releases");
 
     @Test
     public void shouldReturnEmptyStringIfUserAgentIsUpToDate() throws Exception {

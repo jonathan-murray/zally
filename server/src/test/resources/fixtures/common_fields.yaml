@@ -10,11 +10,11 @@ info:
 host: psa.artmc.zalan.do
 basePath: /
 schemes:
-  - https
+- https
 produces:
-  - application/json
+- application/json
 consumes:
-  - application/json
+- application/json
 parameters:
   Authorization:
     name: Authorization
@@ -36,24 +36,24 @@ definitions:
     description: |
       Represents a Partner job configuration that will run periodically by Partner Server Adapter
     required:
-      - name
-      - created
-      - modified
-      - type
-      - catalogUrl
-      - catalogUsername
-      - catalogPassword
-      - stockUrl
-      - stockUsername
-      - stockPassword
-      - articleServiceUsername
-      - articleServicePassword
-      - channelId
-      - asrFtpUrl
-      - asrFtpPath
-      - asrFtpUsername
-      - asrFtpPassword
-      - active
+    - name
+    - created
+    - modified
+    - type
+    - catalogUrl
+    - catalogUsername
+    - catalogPassword
+    - stockUrl
+    - stockUsername
+    - stockPassword
+    - articleServiceUsername
+    - articleServicePassword
+    - channelId
+    - asrFtpUrl
+    - asrFtpPath
+    - asrFtpUsername
+    - asrFtpPassword
+    - active
     properties:
       id:
         type: string
@@ -134,10 +134,10 @@ definitions:
   JobSummary:
     type: object
     required:
-      - start
-      - end
-      - partner_id
-      - details_url
+    - start
+    - end
+    - partner_id
+    - details_url
     properties:
       start:
         type: string
@@ -153,14 +153,14 @@ definitions:
   JobDetails:
     type: object
     required:
-      - start
-      - end
-      - partner_id
-      - feed_type
-      - total_count
-      - success_count
-      - failure_count
-      - failures
+    - start
+    - end
+    - partner_id
+    - feed_type
+    - total_count
+    - success_count
+    - failure_count
+    - failures
     properties:
       start:
         type: string

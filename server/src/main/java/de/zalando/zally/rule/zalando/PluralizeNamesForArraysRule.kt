@@ -9,10 +9,10 @@ import de.zalando.zally.util.getAllJsonObjects
 import io.swagger.models.Swagger
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "120",
-        severity = Severity.SHOULD,
-        title = "Array names should be pluralized"
+    ruleSet = ZalandoRuleSet::class,
+    id = "120",
+    severity = Severity.SHOULD,
+    title = "Array names should be pluralized"
 )
 class PluralizeNamesForArraysRule {
 

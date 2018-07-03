@@ -24,8 +24,8 @@ import static org.springframework.web.util.UriComponentsBuilder.fromPath;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(
-    webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-    classes = {Application.class, RestApiTestConfiguration.class}
+        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+        classes = {Application.class, RestApiTestConfiguration.class}
 )
 @ActiveProfiles("test")
 public abstract class RestApiBaseTest {
@@ -49,7 +49,7 @@ public abstract class RestApiBaseTest {
 
     protected final <T> ResponseEntity<T> sendApiDefinition(ApiDefinitionRequest request, Class<T> responseType) {
         return restTemplate.postForEntity(
-            API_VIOLATIONS_URL, request, responseType
+                API_VIOLATIONS_URL, request, responseType
         );
     }
 
@@ -63,17 +63,17 @@ public abstract class RestApiBaseTest {
 
     protected final <T> ResponseEntity<T> getReviewStatisticsBetween(Object from, Object to, Class<T> responseType) {
         String url = fromPath(REVIEW_STATISTICS_URL)
-            .queryParam("from", from)
-            .queryParam("to", to)
-            .build().encode().toUriString();
+                .queryParam("from", from)
+                .queryParam("to", to)
+                .build().encode().toUriString();
 
         return restTemplate.getForEntity(url, responseType);
     }
 
     protected final <T> ResponseEntity<T> getReviewStatisticsByUserAgent(Object userAgent, Class<T> responseType) {
         String url = fromPath(REVIEW_STATISTICS_URL)
-            .queryParam("user_agent", userAgent)
-            .build().encode().toUriString();
+                .queryParam("user_agent", userAgent)
+                .build().encode().toUriString();
 
         return restTemplate.getForEntity(url, responseType);
     }
@@ -106,9 +106,9 @@ public abstract class RestApiBaseTest {
 
     protected final <T> ResponseEntity<T> getSupportedRules(String ruleType, Boolean active, Class<T> responseType) {
         String url = fromPath(SUPPORTED_RULES_URL)
-            .queryParam("type", ruleType)
-            .queryParam("is_active", active)
-            .build().encode().toUriString();
+                .queryParam("type", ruleType)
+                .queryParam("is_active", active)
+                .build().encode().toUriString();
 
         return restTemplate.getForEntity(url, responseType);
     }

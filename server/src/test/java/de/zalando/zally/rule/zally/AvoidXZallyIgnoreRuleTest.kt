@@ -30,7 +30,7 @@ class AvoidXZallyIgnoreRuleTest {
         val violation = rule.validate(root)
 
         assertThat(violation?.paths!!)
-                .hasSameElementsAs(listOf("ignores rules ONE, TWO, THREE"))
+            .hasSameElementsAs(listOf("ignores rules ONE, TWO, THREE"))
     }
 
     @Test
@@ -46,7 +46,7 @@ class AvoidXZallyIgnoreRuleTest {
         val violation = rule.validate(root)
 
         assertThat(violation?.paths!!)
-                .hasSameElementsAs(listOf("ignores rules ONE, TWO, THREE"))
+            .hasSameElementsAs(listOf("ignores rules ONE, TWO, THREE"))
     }
 
     @Test
@@ -60,7 +60,7 @@ class AvoidXZallyIgnoreRuleTest {
         val violation = rule.validate(root)
 
         assertThat(violation?.paths!!)
-                .hasSameElementsAs(listOf("info: ignores rules ONE, TWO, THREE"))
+            .hasSameElementsAs(listOf("info: ignores rules ONE, TWO, THREE"))
     }
 
     @Test
@@ -73,7 +73,7 @@ class AvoidXZallyIgnoreRuleTest {
         val violation = rule.validate(root)
 
         assertThat(violation?.paths!!)
-                .hasSameElementsAs(listOf("invalid ignores, expected list but found single value \"INVALID\""))
+            .hasSameElementsAs(listOf("invalid ignores, expected list but found single value \"INVALID\""))
     }
 
     @Test
@@ -87,6 +87,6 @@ class AvoidXZallyIgnoreRuleTest {
         val violation = rule.validate(root)
 
         assertThat(violation?.paths!!)
-                .hasSameElementsAs(listOf("invalid ignores, expected list but found {\"invalid\":\"INVALID\"}"))
+            .hasSameElementsAs(listOf("invalid ignores, expected list but found {\"invalid\":\"INVALID\"}"))
     }
 }

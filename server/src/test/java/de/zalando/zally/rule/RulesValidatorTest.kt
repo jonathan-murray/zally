@@ -16,25 +16,25 @@ class RulesValidatorTest {
     private val swaggerContent = javaClass.classLoader.getResource("fixtures/api_spp.json").readText(Charsets.UTF_8)
 
     @Rule(
-            ruleSet = TestRuleSet::class,
-            id = "TestFirstRule",
-            severity = Severity.SHOULD,
-            title = "First Rule"
+        ruleSet = TestRuleSet::class,
+        id = "TestFirstRule",
+        severity = Severity.SHOULD,
+        title = "First Rule"
     )
     class TestFirstRule {
 
         @Suppress("UNUSED_PARAMETER")
         @Check(severity = Severity.SHOULD)
         fun validate(swagger: Swagger): List<Violation> = listOf(
-                Violation("dummy1", listOf("x", "y", "z")),
-                Violation("dummy2", listOf()))
+            Violation("dummy1", listOf("x", "y", "z")),
+            Violation("dummy2", listOf()))
     }
 
     @Rule(
-            ruleSet = TestRuleSet::class,
-            id = "TestSecondRule",
-            severity = Severity.MUST,
-            title = "Second Rule"
+        ruleSet = TestRuleSet::class,
+        id = "TestSecondRule",
+        severity = Severity.MUST,
+        title = "Second Rule"
     )
     class TestSecondRule {
 
@@ -44,10 +44,10 @@ class RulesValidatorTest {
     }
 
     @Rule(
-            ruleSet = TestRuleSet::class,
-            id = "TestBadRule",
-            severity = Severity.MUST,
-            title = "Third Rule"
+        ruleSet = TestRuleSet::class,
+        id = "TestBadRule",
+        severity = Severity.MUST,
+        title = "Third Rule"
     )
     class TestBadRule {
 
@@ -66,7 +66,7 @@ class RulesValidatorTest {
         val validator = SwaggerRulesValidator(rulesManager(rules))
         val results = validator.validate(swaggerContent, RulesPolicy(emptyArray()))
         assertThat(results)
-                .isEmpty()
+            .isEmpty()
     }
 
     @Test
@@ -75,7 +75,7 @@ class RulesValidatorTest {
         val validator = SwaggerRulesValidator(rulesManager(rules))
         val results = validator.validate(swaggerContent, RulesPolicy(emptyArray()))
         assertThat(results.map(Result::toViolation).map(Violation::description))
-                .containsExactly("dummy3")
+            .containsExactly("dummy3")
     }
 
     @Test
@@ -84,7 +84,7 @@ class RulesValidatorTest {
         val validator = SwaggerRulesValidator(rulesManager(rules))
         val results = validator.validate(swaggerContent, RulesPolicy(emptyArray()))
         assertThat(results.map(Result::toViolation).map(Violation::description))
-                .containsExactly("dummy1", "dummy2")
+            .containsExactly("dummy1", "dummy2")
     }
 
     @Test
@@ -93,7 +93,7 @@ class RulesValidatorTest {
         val validator = SwaggerRulesValidator(rulesManager(rules))
         val results = validator.validate(swaggerContent, RulesPolicy(emptyArray()))
         assertThat(results.map(Result::toViolation).map(Violation::description))
-                .containsExactly("dummy3", "dummy1", "dummy2")
+            .containsExactly("dummy3", "dummy1", "dummy2")
     }
 
     @Test
@@ -102,7 +102,7 @@ class RulesValidatorTest {
         val validator = SwaggerRulesValidator(rulesManager(rules))
         val results = validator.validate(swaggerContent, RulesPolicy(arrayOf("TestSecondRule")))
         assertThat(results.map(Result::toViolation).map(Violation::description))
-                .containsExactly("dummy1", "dummy2")
+            .containsExactly("dummy1", "dummy2")
     }
 
     @Test
@@ -116,11 +116,11 @@ class RulesValidatorTest {
 
     private fun rulesManager(rules: List<Any>): RulesManager {
         return RulesManager(
-                rules.mapNotNull { instance ->
-                    val rule = instance::class.java.getAnnotation(Rule::class.java)
-                    val ruleSet = rule?.ruleSet?.createInstance()
-                    ruleSet?.let { RuleDetails(ruleSet, rule, instance) }
-                }
+            rules.mapNotNull { instance ->
+                val rule = instance::class.java.getAnnotation(Rule::class.java)
+                val ruleSet = rule?.ruleSet?.createInstance()
+                ruleSet?.let { RuleDetails(ruleSet, rule, instance) }
+            }
         )
     }
 }

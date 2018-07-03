@@ -18,12 +18,12 @@ api_definition:
         tags:
 
 
-          - id-mappings
+        - id-mappings
         description: List of identifiers associated with the source id.
         parameters:
-          - $ref: '#/parameters/identifier_type'
-          - $ref: '#/parameters/source_identifier'
-          - $ref: '#/parameters/target_identifier_type'
+        - $ref: '#/parameters/identifier_type'
+        - $ref: '#/parameters/source_identifier'
+        - $ref: '#/parameters/target_identifier_type'
 
 
 
@@ -42,5 +42,5 @@ api_definition:
             schema:
               $ref: '#definitions/Problem'
         security:
-          - oauth2:
-            - 'cross-device-graph-service.read'
+        - oauth2:
+          - 'cross-device-graph-service.read'

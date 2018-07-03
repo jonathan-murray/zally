@@ -8,10 +8,10 @@ import de.zalando.zally.util.PatternUtil
 import io.swagger.models.Swagger
 
 @Rule(
-        ruleSet = ZalandoRuleSet::class,
-        id = "115",
-        severity = Severity.MUST,
-        title = "Do Not Use URI Versioning"
+    ruleSet = ZalandoRuleSet::class,
+    id = "115",
+    severity = Severity.MUST,
+    title = "Do Not Use URI Versioning"
 )
 class NoVersionInUriRule {
     private val description = "basePath attribute contains version number"
