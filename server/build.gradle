@@ -100,13 +100,22 @@ jacocoTestReport {
     }
 }
 
-task ktlint(type: JavaExec) {
+task ktlint(type: JavaExec, group: "verification") {
+    description = "Check Kotlin code style."
     main = "com.github.shyiko.ktlint.Main"
     classpath = configurations.ktlint
     args "src/**/*.kt"
 }
 
+task ktlintFormat(type: JavaExec, group: "formatting") {
+    description = "Fix Kotlin code style deviations."
+    classpath = configurations.ktlint
+    main = "com.github.shyiko.ktlint.Main"
+    args "-F", "src/**/*.kt"
+}
+
 check.dependsOn jacocoTestReport
+check.dependsOn ktlintFormat
 check.dependsOn ktlint
 
 bootRun {
